@@ -6,10 +6,12 @@
     An e-learning platform designed for kids to learn Greek online
   description: | # this will include new lines to allow paragraphs
     Working as Full Stack Mobile Developer at ellinopoula.com, responsible for the development of an e-learning platform for kids.
+    
     Responsibilities including:
     - development of the e-learning platform in Python/Django
     - mobile application development, native iOS and Android development in Swift/Kotlin and experimenting with Flutter SDK 
-    
+    - supporting DevOps (CI via GitLab mostly) on Google AppEngine.
+
     Technologies used: <mark>Python/Django</mark>, <mark>Kotlin/Android SDK</mark>, <mark>Swift/iOS SDK</mark>, <mark>Dart/Flutter</mark>
 
 
