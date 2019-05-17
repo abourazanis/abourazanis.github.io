@@ -1,0 +1,61 @@
+# Site
+repository: sproogen/resume-theme
+# favicon: images/favicon.ico
+
+# Personal info
+name: Anastasios Bourazanis
+title: Full Stack Developer
+email: a.bourazanis@gmail.com
+website: www.abourazanis.com
+
+# Social links
+twitter_username: 
+github_username:  abourazanis
+# dribbble_username: jekyll
+facebook_username: anastasios.bourazanis
+# flickr_username: jekyll
+instagram_username: abourazanis
+linkedin_username: abourazanis
+# pinterest_username: jekyll
+# youtube_username: globalmtb
+# googleplus_username: +jekyll
+
+# About Section
+about_title: About Me
+about_profile_image: images/profile.jpg
+about_content: | # this will include new lines to allow paragraphs
+  Hi, my name is Anastasis and I'm a Full Stack Developer. 
+  I consider myself mostly backend oriented, with experience in AWS DevOps on multi tier scaling environments. 
+  Aside from web development, I'm experimenting with mobile frameworks, native and hybrid. Currently amazed by <mark>Flutter</mark> framework. 
+  My interests are in Dockerized applications, microservices architecture and in mobile frameworks.
+
+  I'm most skilled in : <mark>Python</mark>, <mark>Django</mark>, <mark>Kotlin</mark>, <mark>Swift</mark>, <mark>Dart</mark>, <mark>Java</mark>, <mark>HTML</mark>, <mark>CSS3</mark>, <mark>Javascript</mark>.
+
+# Projects Section
+projects_title: Projects
+
+# Experience Section
+experience_title: Experience
+
+# Education Section
+educaton_title: Education
+
+# More Section
+more_title: A Little More About Me
+more_content: | # this will include new lines to allow paragraphs
+  Alongside my interest in software engineering some of my other interests and hobbies are:
+   - Airplanes
+   - Modelism
+
+# Footer
+footer_show_references: true
+
+# Build settings
+remote_theme: sproogen/resume-theme
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+ - jekyll-seo-tag

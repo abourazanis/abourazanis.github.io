@@ -1,0 +1,6 @@
+- name: University of West Attica
+  dates: 2006 - 2012
+  qualification: BSc Computer Science
+  quote: >
+  description: | # this will include new lines to allow paragraphs
+    BSc Thesis titled "Development of a Digital Rights Management Protocol (DRM) and an ebook reading application for the epub ebook standard in the Android platform".
