@@ -8,9 +8,9 @@
     Working as Full Stack Mobile Developer at ellinopoula.com, responsible for the development of an e-learning platform for kids.
     
     Responsibilities including:
-    - development of the e-learning platform in Python/Django
+    - development of various features of the e-learning platform in Python/Django
     - mobile application development, native iOS and Android development in Swift/Kotlin and experimenting with Flutter SDK 
-    - supporting DevOps (CI via GitLab mostly) on Google AppEngine.
+    - supporting DevOps on Google AppEngine. Added CI/CD by utilizing Gitlab.
 
     Technologies used: <mark>Python/Django</mark>, <mark>Kotlin/Android SDK</mark>, <mark>Swift/iOS SDK</mark>, <mark>Dart/Flutter</mark>
 
@@ -25,9 +25,10 @@
     Working as Senior Full Stack Web Developer at giaola.gr, responsible for the development of a booking platform for the major Telecommunications Provider in Greece (11888.gr).
     
     Responsibilities including:
-    - development of the booking platform in Python/Django
+    - development of the booking platform backend in Python/Django
     - coordination of the development team by using the Git-Flow strategy and by following the Agile methodology principles 
-    - supporting DevOps operations , mostly on Dockerized AWS ElasticBeanStalk environments.
+    - implementation of a  RESTful API for the giaola booking application
+    - deployment of the overall service infrastructure utilizing Docker containers, BitBucket Pipelines, and several AWS stack (including EC2, ECS, Route 53, S3, CloudFront, RDS, ElastiCache, IAM) on AWS Elastic Beanstalk environment, focusing on high-availability, fault tolerance, and auto-scaling.
     
     Technologies used: <mark>Python/Django</mark>, <mark>PostgreSQL</mark>, <mark>Celery</mark>, <mark>RabbitMQ</mark>, <mark>Amazon EBS</mark>
 
@@ -41,6 +42,10 @@
   description: | # this will include new lines to allow paragraphs
     Held a Web & Mobile Application Developer position at ellinopoula, responsible for the development of the Ellinopoula iOS app alongside with the development/support of the website.
     
+    Responsibilities including:
+    - development of various features of the e-learning platform in Python/Django
+    - development of the iOs e-learning mobile application in Objective C
+
     Technologies used: <mark>Python/Django</mark>, <mark>Objective-C/iOS SDK</mark>
 
 
