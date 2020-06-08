@@ -1,7 +1,18 @@
+- company: Plum Fintech
+  link: www.withplum.com
+  job_title: Software Engineer
+  dates: April 2020 - Present
+  quote: >
+    An AI assistant that helps users to set money aside and invest by analyzing their income and outgoings.
+  description: | # this will include new lines to allow paragraphs
+    Working as Software Engineer at withplum.com, shipping web applications and APIs using Python, Flask, Celery, PostgreSQL.
+
+    Technologies used: <mark>Python/Flask</mark>, <mark>PostgreSQL</mark>, <mark>Celery</mark>, <mark>RabbitMQ</mark>
+
 - company: Ellinopoula
   link: www.ellinopoula.com
   job_title: Web / Mobile Developer
-  dates: January 2018 - Present
+  dates: January 2018 - April 2020  
   quote: >
     An e-learning platform designed for kids to learn Greek online
   description: | # this will include new lines to allow paragraphs
