@@ -48,8 +48,8 @@ linkedin_username: abourazanis
 about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  Hi, my name is Anastasis and I'm backend software engineer with over 10 years of experience currently specializing in Python development.
-  I am currently working for Plum as an Engineering Lead on a crossfunctioning team responsible for domains such as user's onboarding and account linking/aggregation.
+  Hi, my name is Anastasis and I'm a backend software engineer with over 10 years of experience, currently specializing in Python development.
+  I am currently working for Plum Fintech as an Engineering Lead on a crossfunctioning team responsible for domains such as user's onboarding and account linking/aggregation.
   
   I love to explore new technologies and use them to build great and scalable products.
 
@@ -78,7 +78,7 @@ content:
     content:
       - layout: left
         border: weak
-        title: Plum Fintech
+        title: Plum
         link: www.withplum.com
         # link_text: boringcompany.com
         sub_title: Tech Lead & Software Engineer
@@ -95,7 +95,7 @@ content:
      
       - layout: left
         border: weak
-        title: Plum Fintech
+        title: Plum
         link: www.withplum.com
         # link_text: boringcompany.com
         sub_title: Software Engineer
