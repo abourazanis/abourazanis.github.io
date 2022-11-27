@@ -2,54 +2,236 @@
 repository: sproogen/resume-theme
 # favicon: images/favicon.ico
 
+# Content configuration version
+version: 2
+
 # Personal info
 name: Anastasios Bourazanis
 title: Software Engineer
 email: a.bourazanis@gmail.com
 website: www.abourazanis.com
 
+# Dark Mode (true/false/never)
+darkmode: never
+
 # Social links
-twitter_username: 
+# twitter_username: 
 github_username:  abourazanis
+# stackoverflow_username: "00000001"
 # dribbble_username: jekyll
 facebook_username: anastasios.bourazanis
 # flickr_username: jekyll
 instagram_username: abourazanis
 linkedin_username: abourazanis
+# xing_username: jekyll
 # pinterest_username: jekyll
-# youtube_username: globalmtb
+# youtube_username: 
 # googleplus_username: +jekyll
+# orcid_username: 0000-0000-0000-0000
+
+# Additional icon links
+# additional_links:
+# - title: itsgoingto.be
+  # icon: fas fa-globe
+  # url: https://www.itsgoingto.be
+# - title: another link
+#   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
+#   url: Link url (eg. https://google.com)
+
+# Google Analytics and Tag Manager
+# Using more than one of these may cause issues with reporting
+# gtm: "GTM-0000000"
+# gtag: "UA-00000000-0"
+# google_analytics: "UA-00000000-0"
 
 # About Section
 about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  Hi, my name is Anastasis and I'm a Software Engineer. 
-  I consider myself mostly backend oriented, with experience in AWS DevOps on multi tier scaling environments. 
-  Aside from web development, I'm experimenting with mobile frameworks, native and hybrid. Currently amazed by <mark>Flutter</mark> framework. 
-  My interests are in Dockerized applications, microservices architecture and in mobile frameworks.
+  Hi, my name is Anastasis and I'm backend software engineer with over 10 years of experience currently specializing in Python development.
+  I am currently working for Plum as an Engineering Lead on a crossfunctioning team responsible for domains such as user's onboarding and account linking/aggregation.
+  
+  I love to explore new technologies and use them to build great and scalable products.
 
-  I'm most skilled in : <mark>Python</mark>, <mark>Django</mark>, <mark>Kotlin</mark>, <mark>Swift</mark>, <mark>Dart</mark>, <mark>Java</mark>, <mark>HTML5</mark>, <mark>CSS3</mark>, <mark>Javascript</mark>.
+content:
+  # - title: Projects # Title for the section
+  #   layout: list # Type of content section (list/text)
+  #   content:
+  #     - layout: top-middle
+  #       title: Super awesome project
+  #       link: github.com/sproogen
+  #       # link_text: Project Website
+  #       additional_links:
+  #         - title:  sproogen/modern-resume-theme
+  #           icon: fab fa-github
+  #           url: github.com/sproogen/modern-resume-theme
+  #         # - title:  Github page for project (eg. sproogen/modern-resume-theme)
+  #         #   icon: fab fa-github
+  #         #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
+  #       quote: >
+  #         This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
+  #       description: | # this will include new lines to allow paragraphs
+  #         I started this project as a way if learning <mark>React</mark> and it has since grown into a fully fledged app. I have learned many skills through this and been I'm very proud of having this in my portfolio. If you don't have a project as awesome as this I would advise you make one.
 
-# Projects Section
-projects_title: Projects
+  - title: Experience # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        border: weak
+        title: Plum Fintech
+        link: www.withplum.com
+        # link_text: boringcompany.com
+        sub_title: Tech Lead & Software Engineer
+        caption: September 2021 - Present
+        quote: >
+          An AI assistant that helps users to set money aside and invest by analyzing their income and outgoings.
+        description: | # this will include new lines to allow paragraphs
+            - Tech Lead & Software Engineer on the Activation squad. A team of 6 engineers, a product manager and a designer. The squad's main responsibilities are user's onboarding, account linking/aggregation and the savers feature.
+            - Responsible for the delivery, architectural direction, people and health of the team.
+            - People lead for 10 engineers.
+            - Participating in the hiring process by being a member of the interviewing team.
+            - Mentoring jun/mid/senior engineers.
+            - Redesign the referrals mechanism by following Domain Driven Design with Python, Flask, MongoDB, GCP.
+     
+      - layout: left
+        border: weak
+        title: Plum Fintech
+        link: www.withplum.com
+        # link_text: boringcompany.com
+        sub_title: Software Engineer
+        caption: April 2020 - September 2021
+        quote: >
+          An AI assistant that helps users to set money aside and invest by analyzing their income and outgoings.
+        description: | # this will include new lines to allow paragraphs
+            - Contributing to the redesign of the subscription mechanism.
+            - Participated in the design and implementation of a new budgeting feature.
+            - Contributing to Plum's analytics system with Python, Flask, GCP PubSub.
 
-# Experience Section
-experience_title: Experience
+            Technologies used: <mark>Python/Flask</mark>, <mark>PostgreSQL</mark>, <mark>Celery</mark>, <mark>RabbitMQ</mark>
+      
+      - layout: left
+        border: weak
+        title: Ellinopoula
+        link: www.ellinopoula.com
+        # link_text: boringcompany.com
+        sub_title: Web/ Mobile Developer
+        caption: January 2018 - April 2020
+        quote: >
+          An e-learning platform designed for kids to learn Greek online
+        description: | # this will include new lines to allow paragraphs
+            Working as Web / Mobile Developer at ellinopoula.com, responsible for the development of an e-learning platform for kids.
+    
+            Responsibilities including:
+            - development of various features of the e-learning platform in Python/Django
+            - mobile application development, native iOS and Android development in Swift/Kotlin and experimenting with Flutter SDK 
+            - supporting DevOps on Google AppEngine. Added CI/CD by utilizing Gitlab.
 
-# Education Section
-educaton_title: Education
+            Technologies used: <mark>Python/Django</mark>, <mark>Kotlin/Android SDK</mark>, <mark>Swift/iOS SDK</mark>, <mark>Dart/Flutter</mark>
 
-# More Section
-more_title: A Little More About Me
-more_content: | # this will include new lines to allow paragraphs
-  Alongside my interest in software engineering some of my other interests and hobbies are:
-   - Airplanes
-   - Modelism
-   - Lindy Hop
+      - layout: left
+        border: weak
+        title: Giaola 11888
+        link: www.11888.gr
+        # link_text: boringcompany.com
+        sub_title: Senior Web Developer
+        caption: April 2016 - January 2018
+        quote: >
+          An electronic directory and a marketplace helping users to find, contact, book, and transact with freelancers and physical businesses
+        description: | # this will include new lines to allow paragraphs
+            Working as Senior Full Stack Web Developer at giaola.gr, responsible for the development of a booking platform for the major Telecommunications Provider in Greece (11888.gr).
+    
+            Responsibilities including:
+            - development of the booking platform backend in Python/Django
+            - coordination of the development team by using the Git-Flow strategy and by following the Agile methodology principles 
+            - implementation of a  RESTful API for the giaola booking application
+            - deployment of the overall service infrastructure utilizing Docker containers, BitBucket Pipelines, and several AWS stack (including EC2, ECS, Route 53, S3, CloudFront, RDS, ElastiCache, IAM) on AWS Elastic Beanstalk environment, focusing on high-availability, fault tolerance, and auto-scaling.
+            
+            Technologies used: <mark>Python/Django</mark>, <mark>PostgreSQL</mark>, <mark>Celery</mark>, <mark>RabbitMQ</mark>, <mark>Amazon EBS</mark>
+      
+      - layout: left
+        border: weak
+        title: Ellinopoula
+        link: www.ellinopoula.com
+        # link_text: boringcompany.com
+        sub_title: Web/ Mobile Developer
+        caption: March 2015 - September 2015
+        quote: >
+          An e-learning platform designed for kids to learn Greek online
+        description: |
+            Held a Web & Mobile Developer position at ellinopoula, responsible for the development of the Ellinopoula iOS app alongside with the development/support of the website.
+    
+            Responsibilities including:
+            - development of various features of the e-learning platform in Python/Django
+            - development of the iOs e-learning mobile application in Objective C
+
+            Technologies used: <mark>Python/Django</mark>, <mark>Objective-C/iOS SDK</mark>
+      
+      - layout: left
+        border: weak
+        title: Giaola
+        link: www.giaola.gr
+        # link_text: boringcompany.com
+        sub_title: Web & Mobile Developer
+        caption: March 2013 - April 2016
+        quote: >
+          An electronic directory and a marketplace helping users to find, contact, book, and transact with freelancers and physical businesses
+        description: |
+            Working as Web & Mobile Developer at giaola, responsible for the design, development and maintenance of the giaola platform.
+            Also developed some small native mobile apps in Android/Java and iOS/Objective C  in order to support the giaola ecosystem.
+    
+            Technologies used: <mark>Python/Django</mark>, <mark>PostgreSQL</mark>, <mark>Celery</mark>, <mark>RabbitMQ</mark>, <mark>Amazon EBS</mark>, <mark>Java/Android SDK</mark>, <mark>Objective-C/iOS SDK</mark>
+
+      - layout: left
+        border: weak
+        title: Freelance
+        # link: www.ellinopoula.com
+        # link_text: boringcompany.com
+        sub_title: Web Developer
+        caption: Octomber 2010 - November 2011
+        quote: >
+
+        description: |
+            Developed several Web Applications for third party clients.
+
+      - layout: left
+        # border: weak
+        title: Lighthouse eCommerce & eMarketing Solutions
+        link: www.lighthouse.com
+        # link_text: boringcompany.com
+        sub_title: Junior Web Developer
+        caption: April 2010 - September 2010
+        quote: >
+          Web development company, specialized in e-commerce applications and digital marketing services
+        description: |
+            Held a Junior Web developer position using  HTML, CSS, JQuery, C#, Asp.NET, WinForms and SQL. 
+  
+            Responsible for pixel-perfect adaptation of Photoshop to HTML using HTML, CSS, & JQuery, as well for the development of internal tools for the management team by using WinForms and Microsoft Access.
+
+            Also took part in backend development in the company's custom CMS by using C# and Telerik controls.
+
+
+  - title: Education # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: University of West Attica
+        caption: 2006 - 2012
+        sub_title: BSc in Computer Science
+        # quote:
+        description: | # this will include new lines to allow paragraphs
+          BSc Thesis titled "Development of a Digital Rights Management Protocol (DRM) and an ebook reading application for the epub ebook standard in the Android platform".
+
+  - title: A Little More About Me
+    layout: text
+    content: | # this will include new lines to allow paragraphs
+        Alongside my interest in software engineering some of my other interests and hobbies are:
+        - Airplanes
+        - Modelism
+        - Lindy Hop
 
 # Footer
 footer_show_references: true
+# references_title: References on request (Override references text)
 
 # Build settings
 remote_theme: sproogen/resume-theme
@@ -60,16 +242,3 @@ sass:
 
 plugins:
  - jekyll-seo-tag
- 
-exclude : [
-  "Gemfile",
-  "Gemfile.lock",
-  "node_modules",
-  "vendor/bundle/",
-  "vendor/cache/",
-  "vendor/gems/",
-  "vendor/ruby/",
-  "lib/",
-  "scripts/",
-  "docker-compose.yml",
-  ]
