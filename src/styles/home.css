@@ -60,7 +60,6 @@
   width: 4.75rem;
   height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 10px;
   background: var(--bg-raised);
-  filter: grayscale(0.75) contrast(1.02);
 }
 @media (min-width: 40rem) { .portrait { width: 9rem; border-radius: 12px; } }
 @media (min-width: 64rem) { .portrait { width: clamp(11rem, 2rem + 12vw, 13rem); } }
