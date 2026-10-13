@@ -11,8 +11,7 @@ export interface Role {
   start: string; // "YYYY-MM"
   end?: string; // omitted: present
   about?: string; // what the company does, one line
-  intro?: string[]; // paragraphs before the bullet points
-  points?: string[];
+  points: string[];
   tags?: string[];
 }
 
@@ -53,11 +52,6 @@ export const experience: Role[] = [
     start: '2022-11',
     end: '2024-06',
     about: 'An AI assistant that helps users to set money aside and invest by analyzing their income and outgoings.',
-    intro: [
-      'Overseeing two dynamic teams: one cross-functional squad and one dedicated mobile platform squad.',
-      'The cross-functional squad consists of 8 engineers, a product manager, and a designer. Together, we shape the user experience through seamless onboarding, a robust referral mechanism, banking data linking and aggregation, and one of the most important features of the app, the saving rules.',
-      'The mobile core squad, consisting of iOS and Android mobile engineers, is dedicated to the maintenance and enhancement of our mobile platforms and internal tooling.',
-    ],
     points: [
       'Orchestrated the delivery and provided ongoing architectural direction to ensure the overall health and productivity of both teams.',
       'People lead for 10 engineers, fostered a collaborative and growth-oriented team culture.',
@@ -74,9 +68,6 @@ export const experience: Role[] = [
     url: 'https://withplum.com',
     start: '2021-09',
     end: '2022-11',
-    intro: [
-      'Tech Lead & Software Engineer on the Activation squad. A team of 6 engineers, a product manager and a designer. The squad’s main responsibilities are user’s onboarding, account linking/aggregation and the saving rules feature.',
-    ],
     points: [
       'Responsible for the delivery, architectural direction, people and health of the team.',
       'People lead for 10 engineers.',
@@ -106,7 +97,6 @@ export const experience: Role[] = [
     start: '2018-01',
     end: '2020-04',
     about: 'An e-learning platform designed for kids to learn Greek online.',
-    intro: ['Web & Mobile Developer, responsible for the development of an e-learning platform for kids.'],
     points: [
       'Developed various features for the e-learning platform using Python/Django.',
       'Developed the iOS and Android platform app.',
@@ -123,7 +113,6 @@ export const experience: Role[] = [
     start: '2016-04',
     end: '2018-01',
     about: 'An electronic directory and a marketplace helping users to find, contact, book, and transact with freelancers and physical businesses.',
-    intro: ['Senior Full Stack Web Developer at giaola.gr, led the creation of a booking platform for a major Greek Telecommunications Provider (11888.gr).'],
     points: [
       'Developed the booking platform backend in Python/Django.',
       'Guided the development team with a strategic approach, leveraged the Git-Flow methodology and adhered to the core principles of Agile methodology.',
@@ -138,7 +127,6 @@ export const experience: Role[] = [
     url: 'https://www.ellinopoula.com',
     start: '2015-03',
     end: '2015-09',
-    intro: ['Web & Mobile Application Developer, responsible for the development of the Ellinopoula iOS app alongside with the development/support of the website.'],
     points: [
       'Developed various features of the e-learning platform in Python/Django.',
       'Developed the iOS e-learning mobile application in Objective C.',
@@ -151,7 +139,6 @@ export const experience: Role[] = [
     url: 'https://www.giaola.gr',
     start: '2013-03',
     end: '2016-04',
-    intro: ['Web & Mobile Developer, responsible for the technical design, development and maintenance of the giaola.gr b2c platform.'],
     points: [
       'Developed mobile apps in Android/Java and in iOS/Objective-C in order to support the giaola ecosystem.',
       'Engaged on the technical design and development of the b2c platform.',
@@ -163,7 +150,7 @@ export const experience: Role[] = [
     company: 'Independent',
     start: '2010-10',
     end: '2011-11',
-    intro: ['Developed several Web Applications for third party clients.'],
+    points: ['Developed several Web Applications for third party clients.'],
   },
   {
     title: 'Web Developer',
@@ -171,7 +158,6 @@ export const experience: Role[] = [
     start: '2010-04',
     end: '2010-09',
     about: 'Web development company, specialized in e-commerce applications and digital marketing services.',
-    intro: ['Junior Web developer working with HTML, CSS, JQuery, C#, Asp.NET, WinForms and SQL.'],
     points: [
       'Crafted pixel perfect HTML based on Photoshop templates using HTML, CSS & Jquery.',
       'Developed internal tools for the management team with WinForms and Microsoft Access.',
