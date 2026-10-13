@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/profile.jpg';
+import { site, nav } from '../data/site';
+import ThemeToggle from './ThemeToggle.astro';
+import Socials from './Socials.astro';
+---
+<header class="side">
+  <div class="side-top">
+    <div class="id">
+      <Image
+        class="portrait fade"
+        style="--i:0"
+        src={portrait}
+        alt={`Portrait of ${site.name}`}
+        widths={[160, 320, 420, 690]}
+        sizes="(min-width: 64rem) 13rem, (min-width: 40rem) 9rem, 4.75rem"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="id-name fade" style="--i:1">
+        <h1>{site.name}</h1>
+        <p class="role">{site.role}</p>
+      </div>
+      <ThemeToggle class="fade" style="--i:1" />
+      <p class="tagline fade" style="--i:2">{site.tagline}</p>
+    </div>
+
+    <nav class="toc" aria-label="Main">
+      <ul>
+        {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+        <li class="toc-marker" aria-hidden="true"></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="side-foot">
+    <Socials />
+    <ThemeToggle />
+  </div>
+</header>
+
+<script>
+  import '../scripts/nav';
+</script>

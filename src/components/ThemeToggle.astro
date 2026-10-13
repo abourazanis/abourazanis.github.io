@@ -1,0 +1,13 @@
+---
+import Icon from './Icon.astro';
+
+interface Props { class?: string; style?: string }
+const { class: className, style } = Astro.props;
+---
+<button class:list={['theme-toggle', className]} style={style} type="button" aria-label="Toggle dark mode" aria-pressed="false">
+  <Icon name="contrast" />
+</button>
+
+<script>
+  import '../scripts/theme';
+</script>

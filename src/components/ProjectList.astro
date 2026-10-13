@@ -1,0 +1,14 @@
+---
+import Icon from './Icon.astro';
+import type { Project } from '../data/projects';
+
+interface Props { projects: Project[] }
+const { projects } = Astro.props;
+---
+{projects.map((p) => (
+  <a class="project" href={p.href}>
+    <h3>{p.name}<Icon name="arrow-up-right" /></h3>
+    <span class="meta">{p.year}</span>
+    <p>{p.summary}</p>
+  </a>
+))}

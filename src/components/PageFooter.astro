@@ -1,0 +1,9 @@
+---
+import { site } from '../data/site';
+import Socials from './Socials.astro';
+const year = new Date().getFullYear();
+---
+<footer class="page-foot">
+  <div class="socials"><Socials /></div>
+  <p class="colophon">© {year} {site.name}</p>
+</footer>

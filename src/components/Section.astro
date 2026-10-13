@@ -1,0 +1,9 @@
+---
+// A numbered homepage section; the heading pins under the menu bar on phones.
+interface Props { id: string; num: string; title: string; class?: string; [attr: string]: unknown }
+const { id, num, title, class: className, ...attrs } = Astro.props;
+---
+<section class:list={['block', className]} id={id} aria-labelledby={`${id}-title`} {...attrs}>
+  <h2 id={`${id}-title`}><span aria-hidden="true">{num}</span>{title}</h2>
+  <slot />
+</section>

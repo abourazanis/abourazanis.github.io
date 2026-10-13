@@ -1,0 +1,27 @@
+---
+import Section from './Section.astro';
+import { site } from '../data/site';
+const user = site.githubUser;
+const levels = [0, 1, 2, 3, 4];
+---
+<Section id="github" num="02" title="On GitHub" class="gh" aria-busy="true" data-user={user}>
+  <dl class="gh-stats">
+    <div><dt>Contributions</dt><dd data-stat="total">&nbsp;</dd></div>
+    <div><dt>Active days</dt><dd data-stat="active">&nbsp;</dd></div>
+    <div><dt>Longest streak</dt><dd data-stat="streak">&nbsp;</dd></div>
+  </dl>
+  <div class="gh-scroll">
+    <div class="gh-grid" role="img" aria-label="GitHub contribution calendar, loading"></div>
+  </div>
+  <div class="gh-foot">
+    <span>Last 12 months · <a class="link" href={`https://github.com/${user}`}>github.com/{user}</a></span>
+    <span class="gh-legend" aria-hidden="true">
+      <span>Less</span>{levels.map((l) => <i style={`background:var(--l${l})`}></i>)}<span>More</span>
+    </span>
+  </div>
+</Section>
+<div class="gh-tip" aria-hidden="true"></div>
+
+<script>
+  import '../scripts/github';
+</script>

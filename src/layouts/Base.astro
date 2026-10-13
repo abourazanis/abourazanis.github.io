@@ -1,0 +1,38 @@
+---
+import '@fontsource-variable/archivo/wght.css';
+import '../styles/base.css';
+import DotField from '../components/DotField.astro';
+import { site } from '../data/site';
+
+interface Props { title?: string; description?: string }
+const { title = `${site.name} — ${site.role}`, description = site.description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      // Apply a saved theme before first paint to avoid a flash.
+      try {
+        const t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <DotField />
+    <a class="skip" href="#main">Skip to content</a>
+    <slot />
+  </body>
+</html>
