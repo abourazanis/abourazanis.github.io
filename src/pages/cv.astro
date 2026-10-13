@@ -11,7 +11,7 @@ const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 const fmt = (ym: string) => `${MONTHS[Number(ym.slice(5, 7)) - 1]} ${ym.slice(0, 4)}`;
 const year = new Date().getFullYear();
 ---
-<Base title={`CV — ${site.name}`} description={`Curriculum vitae of ${site.name}, ${site.role.replace(/\u00a0/g, ' ')}.`}>
+<Base title={`CV — ${site.name}`} description={`Curriculum vitae of ${site.name}, ${site.role.toLowerCase()}.`}>
   <nav class="bar" aria-label="CV">
     <a class="bar-item" href="/"><span aria-hidden="true">←</span> Home</a>
     <button class="bar-item" type="button" data-print><span class="wide">Download </span>PDF</button>
@@ -24,7 +24,7 @@ const year = new Date().getFullYear();
       <div>
         <h1>{site.name}</h1>
         <p class="role">{site.role}</p>
-        <p class="focus">Technical Lead at kariera.gr, based in Athens</p>
+        <p class="focus">{site.tagline}</p>
       </div>
       <dl class="links">
         <div class="needs-js"><dt>email</dt><dd><button class="show-email" type="button" data-email={emailCode}>Show email</button></dd></div>

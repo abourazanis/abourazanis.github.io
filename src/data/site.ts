@@ -3,8 +3,8 @@
 // (The CV page carries an encoded one; see emailCode in cv.ts.)
 export const site = {
   name: 'Anastasis Bourazanis',
-  role: 'Backend engineer & tech\u00a0lead', // non-breaking: never leave "lead" alone
-  tagline: 'Technical Lead at kariera.gr. Before that, engineering lead at Plum.',
+  role: 'Backend engineer',
+  tagline: 'Technical Lead at kariera.gr', // second headline line, under the role
   description: 'Anastasis Bourazanis is a backend engineer and technical lead in Athens, currently at kariera.gr.',
   githubUser: 'abourazanis',
   socials: [
