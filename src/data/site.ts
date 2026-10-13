@@ -4,8 +4,8 @@
 export const site = {
   name: 'Anastasis Bourazanis',
   role: 'Backend engineer & tech\u00a0lead', // non-breaking: never leave "lead" alone
-  tagline: 'I design Python backends for products people rely on, and lead the teams that ship them.',
-  description: 'Anastasis Bourazanis builds backend systems in Python and leads the teams that run them.',
+  tagline: 'Technical Lead at kariera.gr. Before that, engineering lead at Plum.',
+  description: 'Anastasis Bourazanis is a backend engineer and technical lead in Athens, currently at kariera.gr.',
   githubUser: 'abourazanis',
   socials: [
     { label: 'GitHub', href: 'https://github.com/abourazanis' },

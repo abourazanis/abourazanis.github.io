@@ -16,7 +16,7 @@ export interface Role {
 }
 
 export const summary =
-  'Backend engineer and tech lead with over fifteen years in software, mostly in Python and Node.js. I design services for recruitment, fintech, e-learning and booking products, and lead the teams that build and run them: delivery, architecture, hiring and mentoring.';
+  'Backend engineer since 2010, working mostly in Python and Node.js. For the past five years I’ve also led teams: setting the architecture, running delivery, hiring and mentoring. I’ve worked on recruitment, fintech, e-learning and booking products.';
 
 export const experience: Role[] = [
   {
@@ -24,13 +24,13 @@ export const experience: Role[] = [
     company: 'kariera.gr',
     url: 'https://www.kariera.gr',
     start: '2025-03',
-    about: 'A job board and recruitment platform in Greece.',
+    about: 'An HR tech platform for job seekers and the companies hiring them.',
     points: [
       'Lead the technical delivery and architectural direction of the backend services behind B2B workflows.',
       'Design and build scalable, event-driven and real-time data processing.',
       'Mentor engineers and encourage ownership, continuous improvement and technical excellence.',
     ],
-    tags: ['node.js', 'event-driven', 'real-time data'],
+    tags: ['node.js', 'typescript', 'nestjs', 'next.js', 'postgresql', 'redis', 'elasticsearch', 'azure openai', 'llms', 'recommender systems'],
   },
   {
     title: 'Senior Software Engineer',
@@ -43,7 +43,7 @@ export const experience: Role[] = [
       'Worked on resume database search, improving its accuracy and performance.',
       'Took part in architecture discussions and improved the system’s observability and resilience.',
     ],
-    tags: ['node.js', 'search', 'observability'],
+    tags: ['node.js', 'typescript', 'postgresql', 'elasticsearch'],
   },
   {
     title: 'Engineering Lead',
@@ -161,11 +161,12 @@ export const experience: Role[] = [
 ];
 
 export const skills = [
-  { area: 'Backend', items: 'Python, Node.js, Flask, Django, REST APIs, Celery, RabbitMQ, domain-driven design' },
-  { area: 'Data', items: 'PostgreSQL, MongoDB, Pub/Sub, event-driven and real-time pipelines, search' },
+  { area: 'Backend', items: 'Python, Node.js, TypeScript, NestJS, Flask, Django, REST APIs, domain-driven design' },
+  { area: 'Data & messaging', items: 'PostgreSQL, MongoDB, Redis, Elasticsearch, Celery, RabbitMQ, Pub/Sub, event-driven pipelines' },
+  { area: 'AI', items: 'LLM features on Azure OpenAI, recommender systems' },
   { area: 'Cloud & delivery', items: 'Google Cloud, AWS, Docker, CI/CD on GitLab and Bitbucket' },
   { area: 'Leadership', items: 'Leading multiple teams, people management, delivery, hiring, mentoring' },
-  { area: 'Mobile', items: 'Swift, Kotlin, Flutter, Objective-C, Android SDK' },
+  { area: 'Web & mobile', items: 'Next.js, Swift, Kotlin, Flutter, Objective-C' },
 ];
 
 export const education = [
