@@ -54,6 +54,7 @@
 .when { font-size: var(--text-sm); color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .job .about { margin-top: 0.15rem; font-size: var(--text-sm); color: var(--muted); font-style: italic; text-wrap: pretty; }
 
+.desc { margin-top: 0.6rem; text-wrap: pretty; }
 .points { margin-top: 0.6rem; display: grid; gap: 0.35rem; }
 .points li { position: relative; padding-left: 1rem; text-wrap: pretty; }
 .points li::before { content: ""; position: absolute; left: 0.1rem; top: 0.72em; width: 0.35rem; height: 1px; background: var(--muted); }

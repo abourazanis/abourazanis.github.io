@@ -52,7 +52,8 @@ const year = new Date().getFullYear();
                   <p class="when"><time datetime={r.start}>{fmt(r.start)}</time> – {r.end ? <time datetime={r.end}>{fmt(r.end)}</time> : 'Present'}</p>
                 </div>
                 {r.about && <p class="about">{r.about}</p>}
-                <ul class="points">{r.points.map((p) => <li>{p}</li>)}</ul>
+                {r.intro?.map((t) => <p class="desc">{t}</p>)}
+                {r.points && <ul class="points">{r.points.map((p) => <li>{p}</li>)}</ul>}
                 {r.tags && <p class="tags"><span class="visually-hidden">Stack: </span>{r.tags.join(' · ')}</p>}
               </li>
             ))}
