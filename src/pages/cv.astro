@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
-import '../styles/cv.css'; // after Base, so it overrides base.css
+import '../styles/page.css'; // after Base, so these override base.css
+import '../styles/cv.css';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import { site } from '../data/site';
 import { summary, experience, skills, education, interests, emailCode } from '../data/cv';
@@ -87,7 +88,7 @@ const [first, ...rest] = site.name.split(' ');
     </div>
   </main>
 
-  <footer class="cv-foot">
+  <footer class="sheet-foot">
     <p>© {year} {site.name}<span class="sep"> · </span>Prints to a clean A4 page</p>
   </footer>
 </Base>

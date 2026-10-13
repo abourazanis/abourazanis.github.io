@@ -1,0 +1,42 @@
+/* Contact page (on top of page.css). */
+
+.intro h1 { font-size: clamp(2rem, 1.4rem + 2.2vw, 3.1rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
+.intro p { margin-top: 1rem; color: var(--muted); max-width: 52ch; text-wrap: pretty; }
+
+.form { margin-top: clamp(2rem, 1.5rem + 1.5vw, 2.75rem); display: grid; gap: 1.5rem; }
+.field-row { display: grid; gap: 0.4rem; }
+.field-row label { font-size: var(--text-sm); font-weight: 500; }
+.hint { font-size: 0.8125rem; color: var(--muted); }
+
+.form input, .form textarea {
+  width: 100%; font: inherit; color: var(--ink);
+  padding: 0.7rem 0.85rem; border: 1px solid var(--line); border-radius: 0.5rem;
+  background: var(--bg);
+  transition: border-color 150ms var(--ease), box-shadow 150ms var(--ease);
+}
+.form textarea { resize: vertical; min-height: 9rem; line-height: 1.55; }
+.form input:hover, .form textarea:hover { border-color: color-mix(in oklch, var(--line) 50%, var(--muted)); }
+.form input:focus-visible, .form textarea:focus-visible {
+  outline: none; border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--accent) 22%, transparent);
+}
+/* Only after the visitor has touched the field */
+.form :user-invalid { border-color: var(--danger); }
+
+.trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.challenge:empty { display: none; }
+
+.status { font-size: var(--text-sm); color: var(--muted); }
+.status:empty { display: none; }
+.status.error { color: var(--danger); }
+.form .actions { margin-top: 0; }
+.btn[aria-disabled="true"] { opacity: 0.7; cursor: progress; }
+
+.sent { margin-top: clamp(2rem, 1.5rem + 1.5vw, 2.75rem); padding-top: 1.75rem; border-top: 1px solid var(--line); }
+.sent:focus { outline: none; }
+.sent h2 { font-size: var(--text-lg); font-weight: 500; }
+.sent p { margin-top: 0.5rem; color: var(--muted); }
+.sent-to { color: var(--ink); }
+.sent .actions { margin-top: 1.25rem; }
+
+.noscript { margin-top: 2rem; color: var(--muted); }
