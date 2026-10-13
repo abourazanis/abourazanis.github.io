@@ -6,7 +6,6 @@
   border-bottom: 1px solid var(--ink);
 }
 .head h1 { font-size: clamp(2rem, 1.4rem + 2.2vw, 3.1rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
-.head h1 span { color: var(--muted); }
 .head .role { margin-top: 0.6rem; text-wrap: balance; }
 .head .focus { color: var(--muted); text-wrap: balance; }
 .links { font-size: var(--text-sm); line-height: 1.5; display: grid; gap: 0.15rem; }

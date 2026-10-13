@@ -10,7 +10,6 @@ import { summary, experience, skills, education, interests, emailCode } from '..
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const fmt = (ym: string) => `${MONTHS[Number(ym.slice(5, 7)) - 1]} ${ym.slice(0, 4)}`;
 const year = new Date().getFullYear();
-const [first, ...rest] = site.name.split(' ');
 ---
 <Base title={`CV — ${site.name}`} description={`Curriculum vitae of ${site.name}, ${site.role.replace(/\u00a0/g, ' ')}.`}>
   <nav class="bar" aria-label="CV">
@@ -23,7 +22,7 @@ const [first, ...rest] = site.name.split(' ');
   <main id="main" class="sheet">
     <header class="head fade">
       <div>
-        <h1>{first} <span>{rest.join(' ')}</span></h1>
+        <h1>{site.name}</h1>
         <p class="role">{site.role}</p>
         <p class="focus">Python backends, platform design, team leadership</p>
       </div>
