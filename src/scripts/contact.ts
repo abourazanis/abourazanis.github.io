@@ -35,7 +35,7 @@ if (form && sent) {
   const api = document.createElement('script');
   api.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstile';
   api.async = true;
-  api.onerror = () => say('The spam check couldn’t load. Please reload the page and try again.', true);
+  api.onerror = () => say('The spam check couldn’t load. Please reload the page, or message me on LinkedIn.', true);
   document.head.append(api);
 
   function say(text: string, error = false) {
@@ -53,7 +53,7 @@ if (form && sent) {
     invalid: 'Please check the fields and try again.',
     challenge: 'The spam check didn’t pass. Please try again.',
   };
-  const FALLBACK = 'Couldn’t send right now. Please try again in a moment.';
+  const FALLBACK = 'Couldn’t send right now. Please try again, or message me on LinkedIn.';
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
