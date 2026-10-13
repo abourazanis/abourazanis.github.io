@@ -1,5 +1,7 @@
 ---
 import '@fontsource-variable/archivo/wght.css';
+// Preload the Latin subset so text renders in Archivo without a late swap.
+import archivoLatin from '@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2?url';
 import '../styles/base.css';
 import DotField from '../components/DotField.astro';
 import { site } from '../data/site';
@@ -13,6 +15,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href={archivoLatin} as="font" type="font/woff2" crossorigin />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />

@@ -11,25 +11,45 @@ if (canvas && ctx && lineEl && accentEl) {
   const target = { x: -9999, y: -9999 }, pos = { x: -9999, y: -9999 };
   let strength = 0, wanted = 0, raf = 0;
 
+  // The static grid is painted once into an offscreen layer (on resize or theme
+  // change); each frame blits it and redraws only the dots near the cursor.
+  const base = document.createElement('canvas');
+  const baseCtx = base.getContext('2d')!;
+
   const readColors = () => {
     colors = { line: getComputedStyle(lineEl).color, accent: getComputedStyle(accentEl).color };
   };
-  const draw = () => {
-    ctx.clearRect(0, 0, w, h);
+  const paintBase = () => {
+    base.width = canvas.width; base.height = canvas.height;
+    baseCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    baseCtx.fillStyle = colors.line;
+    baseCtx.beginPath();
     const ox = (w % GAP) / 2, oy = (h % GAP) / 2;
     for (let y = oy; y < h; y += GAP) {
-      for (let x = ox; x < w; x += GAP) {
+      for (let x = ox; x < w; x += GAP) { baseCtx.moveTo(x + BASE, y); baseCtx.arc(x, y, BASE, 0, 6.283); }
+    }
+    baseCtx.fill();
+  };
+  const draw = () => {
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(base, 0, 0);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    if (strength < 0.01) return;
+    // Only grid points within R of the cursor can be tinted.
+    const ox = (w % GAP) / 2, oy = (h % GAP) / 2;
+    const x0 = ox + Math.max(0, Math.ceil((pos.x - R - ox) / GAP)) * GAP;
+    const y0 = oy + Math.max(0, Math.ceil((pos.y - R - oy) / GAP)) * GAP;
+    ctx.fillStyle = colors.accent;
+    for (let y = y0; y <= pos.y + R && y < h; y += GAP) {
+      for (let x = x0; x <= pos.x + R && x < w; x += GAP) {
         const d = Math.hypot(x - pos.x, y - pos.y);
-        let t = d < R ? 1 - d / R : 0;
+        if (d >= R) continue;
+        let t = 1 - d / R;
         t = t * t * (3 - 2 * t) * strength; // smoothstep, scaled by presence
-        ctx.globalAlpha = 1;
-        ctx.fillStyle = colors.line;
-        ctx.beginPath(); ctx.arc(x, y, BASE, 0, 6.283); ctx.fill();
-        if (t > 0.01) {
-          ctx.globalAlpha = t * 0.45;
-          ctx.fillStyle = colors.accent;
-          ctx.beginPath(); ctx.arc(x, y, BASE + t * 0.35, 0, 6.283); ctx.fill();
-        }
+        if (t <= 0.01) continue;
+        ctx.globalAlpha = t * 0.45;
+        ctx.beginPath(); ctx.arc(x, y, BASE + t * 0.35, 0, 6.283); ctx.fill();
       }
     }
     ctx.globalAlpha = 1;
@@ -38,7 +58,7 @@ if (canvas && ctx && lineEl && accentEl) {
     dpr = Math.min(devicePixelRatio || 1, 2);
     w = innerWidth; h = innerHeight;
     canvas.width = w * dpr; canvas.height = h * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    paintBase();
     draw();
   };
   const loop = () => {
@@ -54,7 +74,7 @@ if (canvas && ctx && lineEl && accentEl) {
   readColors(); resize();
   addEventListener('resize', resize);
   // Re-read colours when the theme changes.
-  const recolor = () => requestAnimationFrame(() => { readColors(); draw(); });
+  const recolor = () => requestAnimationFrame(() => { readColors(); paintBase(); draw(); });
   new MutationObserver(recolor).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', recolor);
 
