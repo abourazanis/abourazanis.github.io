@@ -5,8 +5,16 @@ const buttons = document.querySelectorAll<HTMLButtonElement>('.theme-toggle');
 const systemDark = matchMedia('(prefers-color-scheme: dark)');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 
+// Hex equivalents of --bg, for the browser's toolbar colour.
+const BG = { light: '#f7f9fc', dark: '#0c1522' };
+const themeMetas = document.querySelectorAll<HTMLMetaElement>('meta[name="theme-color"]');
+
 const isDark = () => (root.dataset.theme ? root.dataset.theme === 'dark' : systemDark.matches);
-const sync = () => buttons.forEach((b) => b.setAttribute('aria-pressed', String(isDark())));
+const sync = () => {
+  buttons.forEach((b) => b.setAttribute('aria-pressed', String(isDark())));
+  // A manual choice overrides the system-matched colours.
+  if (root.dataset.theme) themeMetas.forEach((m) => (m.content = isDark() ? BG.dark : BG.light));
+};
 
 sync();
 systemDark.addEventListener('change', sync);

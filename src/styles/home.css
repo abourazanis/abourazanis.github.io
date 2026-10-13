@@ -65,7 +65,7 @@
 @media (min-width: 40rem) { .portrait { width: 9rem; border-radius: 12px; } }
 @media (min-width: 64rem) { .portrait { width: clamp(11rem, 2rem + 12vw, 13rem); } }
 .side h1 { font-size: var(--text-name); font-weight: 500; letter-spacing: -0.025em; line-height: 1.12; text-wrap: balance; }
-.role { margin-top: 0.3rem; font-size: var(--text-base); color: var(--ink); }
+.role { margin-top: 0.3rem; font-size: var(--text-base); color: var(--ink); text-wrap: balance; }
 .tagline {
   margin-top: 0.6rem; max-width: 36ch;
   font-size: clamp(1rem, 0.9rem + 0.3vw, 1.125rem); line-height: 1.5; color: var(--muted);
@@ -81,7 +81,7 @@
 }
 .toc ul { position: relative; display: flex; gap: 0 1.5rem; }
 .toc a {
-  display: inline-block;
+  display: inline-block; min-width: 1.5rem;
   padding-block: 0.8rem; text-decoration: none;
   font-size: var(--text-sm); color: var(--muted);
   transition: color 200ms var(--ease), transform 450ms var(--ease);
@@ -145,7 +145,7 @@
 .block h2 span { color: var(--accent); font-variant-numeric: tabular-nums; margin-right: 0.6rem; }
 
 /* About */
-.about p { color: var(--muted); max-width: 60ch; }
+.about p { color: var(--muted); max-width: 60ch; text-wrap: pretty; }
 .about p + p { margin-top: 1em; }
 .about p strong { color: var(--ink); font-weight: 500; }
 .offclock { font-size: var(--text-sm); }
@@ -165,6 +165,7 @@
 .gh-stats div { display: flex; flex-direction: column-reverse; justify-content: flex-end; }
 
 .gh-scroll { overflow-x: auto; scrollbar-width: thin; padding-bottom: 0.25rem; }
+.gh-scroll:focus-visible { outline-offset: 4px; }
 .gh {
   --l0: var(--line);
   --l1: color-mix(in oklch, var(--accent) 35%, var(--bg));
@@ -192,7 +193,8 @@
 }
 .gh-legend { display: inline-flex; align-items: center; gap: 3px; }
 .gh-legend i { width: 10px; height: 10px; border-radius: 2px; }
-.gh-legend span { margin-inline: 0.35rem; }
+.gh-legend span:first-child { margin-right: 0.35rem; }
+.gh-legend span:last-child { margin-left: 0.35rem; }
 .gh-tip {
   position: fixed; z-index: 20; pointer-events: none;
   background: var(--ink); color: var(--bg); font-size: 0.8125rem;
@@ -216,12 +218,12 @@
 .project h3 { font-size: var(--text-base); font-weight: 500; display: flex; align-items: center; gap: 0.4rem; }
 .project h3 svg { width: 0.95rem; height: 0.95rem; color: var(--muted); transition: transform 200ms var(--ease), color 200ms var(--ease); }
 .project:hover h3 svg { color: var(--accent); transform: translate(0.1rem, -0.1rem); }
-.project p { color: var(--muted); font-size: var(--text-sm); grid-column: 1; }
+.project p { color: var(--muted); font-size: var(--text-sm); grid-column: 1 / -1; text-wrap: pretty; }
 .project .meta { color: var(--muted); font-size: var(--text-sm); font-variant-numeric: tabular-nums; grid-column: 2; grid-row: 1; }
-.projects .link { display: inline-block; margin-top: 1.25rem; font-size: var(--text-sm); padding-block: 0.4rem; }
+.projects .link { display: inline-block; margin-top: 1rem; font-size: var(--text-sm); padding-block: 0.7rem; }
 
 /* Contact */
-.contact-copy { font-size: var(--text-lg); line-height: 1.45; max-width: 34ch; }
+.contact-copy { font-size: var(--text-lg); line-height: 1.45; max-width: 34ch; text-wrap: pretty; }
 .contact .actions { margin-top: 1.5rem; }
 
 /* ---------- Footer ---------- */
@@ -245,7 +247,5 @@
 }
 
 @media (max-width: 40rem) {
-  .project { grid-template-columns: minmax(0, 1fr); }
-  .project .meta { grid-column: 1; grid-row: auto; }
   .gh-stats { gap: 0.75rem; }
 }

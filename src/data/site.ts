@@ -2,7 +2,7 @@
 // contact goes through the form and LinkedIn, to keep it away from spam bots.
 export const site = {
   name: 'Anastasis Bourazanis',
-  role: 'Backend engineer & tech lead',
+  role: 'Backend engineer & tech\u00a0lead', // non-breaking: never leave "lead" alone
   tagline: 'I design Python backends for products people rely on, and lead the teams that ship them.',
   description: 'Anastasis Bourazanis builds backend systems in Python and leads the teams that run them.',
   githubUser: 'abourazanis',

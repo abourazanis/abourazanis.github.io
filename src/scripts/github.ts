@@ -19,9 +19,12 @@ if (section && grid && tip) {
 
   const fail = () => {
     section.removeAttribute('aria-busy');
-    section.querySelector('.gh-scroll')!.outerHTML =
-      `<p class="gh-err">Activity couldn’t load right now. See it on <a class="link" href="https://github.com/${user}">GitHub</a>.</p>`;
+    const err = document.createElement('p');
+    err.className = 'gh-err';
+    err.textContent = 'Activity couldn’t load right now.';
+    section.querySelector('.gh-scroll')?.replaceWith(err);
     section.querySelector('.gh-stats')?.remove();
+    section.querySelector('.gh-legend')?.remove();
   };
 
   const render = ({ contributions, total: totals }: Contributions) => {
