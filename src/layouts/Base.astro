@@ -11,7 +11,7 @@ const { title = `${site.name} — ${site.role}`, description = site.description 
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,9 +19,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <!-- Browser UI matches the page background (--bg); theme.ts follows the manual toggle -->
-    <meta name="theme-color" content="#f7f9fc" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0c1522" media="(prefers-color-scheme: dark)" />
+    <!-- Browser UI matches the page background (--bg); theme.ts follows the toggle -->
+    <meta name="theme-color" content="#0c1522" />
     <link rel="icon" href="/favicon.ico" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -29,13 +28,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:type" content="website" />
     <script is:inline>
       document.documentElement.classList.add('js');
-      // Apply a saved theme before first paint to avoid a flash.
+      // Dark by default; apply a saved light choice before first paint to avoid a flash.
       try {
-        const t = localStorage.getItem('theme');
-        if (t === 'light' || t === 'dark') {
-          document.documentElement.dataset.theme = t;
-          const c = t === 'dark' ? '#0c1522' : '#f7f9fc';
-          document.querySelectorAll('meta[name="theme-color"]').forEach((m) => m.setAttribute('content', c));
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.dataset.theme = 'light';
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fc');
         }
       } catch (e) {}
     </script>

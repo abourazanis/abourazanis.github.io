@@ -21,10 +21,7 @@ if (form && sent) {
   started.value = String(Date.now());
 
   // Turnstile, in "interaction-only" mode: it stays hidden unless it needs a click.
-  const isDark = () => {
-    const t = document.documentElement.dataset.theme;
-    return t ? t === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-  };
+  const isDark = () => document.documentElement.dataset.theme !== 'light';
   window.onTurnstile = () => {
     widget = window.turnstile!.render(challenge, {
       sitekey: form.dataset.siteKey,

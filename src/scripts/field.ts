@@ -76,7 +76,6 @@ if (canvas && ctx && lineEl && accentEl) {
   // Re-read colours when the theme changes.
   const recolor = () => requestAnimationFrame(() => { readColors(); paintBase(); draw(); });
   new MutationObserver(recolor).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', recolor);
 
   // Only follows a mouse, and only with motion allowed; otherwise the grid stays static.
   const interactive = matchMedia('(pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches;
