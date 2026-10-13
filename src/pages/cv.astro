@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import '../styles/cv.css'; // after Base, so it overrides base.css
 import ThemeToggle from '../components/ThemeToggle.astro';
 import { site } from '../data/site';
-import { summary, experience, skills, education, interests } from '../data/cv';
+import { summary, experience, skills, education, interests, emailCode } from '../data/cv';
 
 // "Sep 2021" (en-GB's Intl short month is "Sept")
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -15,7 +15,7 @@ const [first, ...rest] = site.name.split(' ');
   <nav class="bar" aria-label="CV">
     <a class="bar-item" href="/"><span aria-hidden="true">←</span> Home</a>
     <button class="bar-item" type="button" data-print><span class="wide">Download </span>PDF</button>
-    <a class="bar-item" href="/contact/">Contact</a>
+    <button class="bar-item needs-js" type="button" data-copy-email={emailCode}><span class="wide">Copy </span>email</button>
     <ThemeToggle />
   </nav>
 
@@ -27,11 +27,11 @@ const [first, ...rest] = site.name.split(' ');
         <p class="focus">Python backends, platform design, team leadership</p>
       </div>
       <dl class="links">
+        <div class="needs-js"><dt>email</dt><dd><button class="show-email" type="button" data-email={emailCode}>Show email</button></dd></div>
         <div><dt>web</dt><dd><a href="/">abourazanis.com</a></dd></div>
         {site.socials.map((s) => (
           <div><dt>{s.label.toLowerCase()}</dt><dd><a href={s.href} rel="me">{new URL(s.href).pathname.split('/').filter(Boolean).pop()}</a></dd></div>
         ))}
-        <div class="no-print"><dt>contact</dt><dd><a href="/contact/">form</a></dd></div>
       </dl>
     </header>
 
@@ -93,5 +93,6 @@ const [first, ...rest] = site.name.split(' ');
 </Base>
 
 <script>
+  import '../scripts/email';
   document.querySelector('[data-print]')?.addEventListener('click', () => print());
 </script>

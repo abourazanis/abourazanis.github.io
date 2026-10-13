@@ -1,4 +1,8 @@
-// CV content, newest first. Plain text only; no email address (see site.ts).
+// CV content, newest first. Plain text only.
+
+// The email address, reversed and base64-encoded so it never appears in the
+// repo or the HTML. scripts/email.ts decodes it only on a click or before printing.
+export const emailCode = 'bW9jLmxpYW1nQHNpbmF6YXJ1b2IuYQ==';
 export interface Role {
   title: string;
   company: string;

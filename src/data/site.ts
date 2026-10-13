@@ -1,5 +1,6 @@
 // Identity and links shared by every page. Never add an email address here:
 // contact goes through the form and LinkedIn, to keep it away from spam bots.
+// (The CV page carries an encoded one; see emailCode in cv.ts.)
 export const site = {
   name: 'Anastasis Bourazanis',
   role: 'Backend engineer & tech\u00a0lead', // non-breaking: never leave "lead" alone
