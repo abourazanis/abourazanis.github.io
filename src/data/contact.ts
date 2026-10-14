@@ -5,5 +5,5 @@ const dev = import.meta.env.DEV;
 
 export const contact = {
   endpoint: dev ? 'http://localhost:8787' : 'https://contact.abourazanis.com',
-  turnstileSiteKey: dev ? '1x00000000000000000000AA' : 'REPLACE_WITH_TURNSTILE_SITE_KEY',
+  turnstileSiteKey: dev ? '1x00000000000000000000AA' : '0x4AAAAAAFW4k6VDZQl3Whqv',
 };
