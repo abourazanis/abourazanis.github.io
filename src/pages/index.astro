@@ -16,8 +16,8 @@ import { projects } from '../data/projects';
 
     <main id="main" class="content">
       <Section id="about" num="01" title="About" class="about">
-        <p>I'm a backend engineer in Athens and Technical Lead at kariera.gr, where I'm responsible for the architecture and delivery of the backend services companies use to hire, including search, recommendation systems and features built on LLMs.</p>
-        <p>Before that I spent four years at Plum, a savings and investing app, where I went from engineer to Engineering Manager for two teams. Earlier I built Django web apps and native iOS and Android apps, and led the build of a booking platform for a major Greek telecoms provider. I started in 2010 at a web agency.</p>
+        <p>I'm a backend engineer based in Athens and Technical Lead at kariera.gr, an HR tech platform for job seekers and the companies hiring them. I'm responsible for the architecture and delivery of its backend services, including search, recommendation systems and features built on LLMs.</p>
+        <p>Before that I spent four years at Plum, a fintech app for saving and investing, where I went from engineer to Engineering Manager for two teams. Earlier I built Django web apps and native iOS and Android apps for an e-learning platform, and led the build of a booking platform for a major Greek telecoms provider. I started in 2010 at a web agency.</p>
         <p class="offclock"><strong>Off the clock</strong>Airplanes&nbsp;· Scale&nbsp;modelling&nbsp;· Lindy&nbsp;Hop</p>
         <div class="actions">
           <a class="btn" href="#contact">Work with me <Icon name="arrow-right" /></a>
@@ -28,7 +28,7 @@ import { projects } from '../data/projects';
       <GitHubActivity />
 
       <Section id="projects" num="03" title="Projects" class="projects">
-        <ProjectList projects={projects} />
+        <ProjectList projects={projects.slice(0, 3)} />
         <a class="link" href="/projects/">All projects</a>
       </Section>
 

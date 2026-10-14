@@ -217,9 +217,8 @@
 .project:last-of-type { border-bottom: 1px solid var(--line); }
 .project h3 { font-size: var(--text-base); font-weight: 500; display: flex; align-items: center; gap: 0.4rem; }
 .project h3 svg { width: 0.95rem; height: 0.95rem; color: var(--muted); transition: transform 200ms var(--ease), color 200ms var(--ease); }
-.project:hover h3 svg { color: var(--accent); transform: translate(0.1rem, -0.1rem); }
+.project:hover h3 svg { color: var(--accent); transform: translateX(0.15rem); }
 .project p { color: var(--muted); font-size: var(--text-sm); grid-column: 1 / -1; text-wrap: pretty; }
-.project .meta { color: var(--muted); font-size: var(--text-sm); font-variant-numeric: tabular-nums; grid-column: 2; grid-row: 1; }
 .projects .link { display: inline-block; margin-top: 1rem; font-size: var(--text-sm); padding-block: 0.7rem; }
 
 /* Contact */
