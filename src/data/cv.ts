@@ -16,7 +16,7 @@ export interface Role {
 }
 
 export const summary =
-  'Backend engineer since 2010, working mostly in Python and Node.js. For the past five years I’ve also led teams: setting the architecture, running delivery, hiring and mentoring. I’ve worked on recruitment, fintech, e-learning and booking products.';
+  "Backend engineer since 2010, working mostly in Python and Node.js. Since 2021 I've mostly been in lead roles, where I set the architecture, run delivery, and hire and mentor engineers. I've worked on recruitment, fintech, e-learning and booking products.";
 
 export const experience: Role[] = [
   {
@@ -46,7 +46,7 @@ export const experience: Role[] = [
     tags: ['node.js', 'typescript', 'postgresql', 'elasticsearch'],
   },
   {
-    title: 'Engineering Lead',
+    title: 'Engineering Manager',
     company: 'Plum',
     url: 'https://withplum.com',
     start: '2022-11',

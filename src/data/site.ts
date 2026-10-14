@@ -5,7 +5,7 @@ export const site = {
   name: 'Anastasis Bourazanis',
   role: 'Backend engineer',
   tagline: 'Technical Lead at kariera.gr', // second headline line, under the role
-  description: 'Anastasis Bourazanis is a backend engineer and technical lead in Athens, currently at kariera.gr.',
+  description: 'Anastasis Bourazanis is a backend engineer and Technical Lead in Athens, currently at kariera.gr.',
   githubUser: 'abourazanis',
   socials: [
     { label: 'GitHub', href: 'https://github.com/abourazanis' },
