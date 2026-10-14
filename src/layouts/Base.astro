@@ -1,0 +1,48 @@
+---
+import '@fontsource-variable/archivo/wght.css';
+// Preload the Latin subset so text renders in Archivo without a late swap.
+import archivoLatin from '@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2?url';
+import '../styles/base.css';
+import DotField from '../components/DotField.astro';
+import { site } from '../data/site';
+
+interface Props { title?: string; description?: string }
+const { title = `${site.name} — ${site.role}`, description = site.description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href={archivoLatin} as="font" type="font/woff2" crossorigin />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <!-- Browser UI matches the page background (--bg); theme.ts follows the toggle -->
+    <meta name="theme-color" content="#0c1522" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      // Dark by default; apply a saved light choice before first paint to avoid a flash.
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.dataset.theme = 'light';
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fc');
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <DotField />
+    <a class="skip" href="#main">Skip to content</a>
+    <slot />
+  </body>
+</html>

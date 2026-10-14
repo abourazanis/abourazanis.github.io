@@ -1,0 +1,19 @@
+// Contact form endpoint for abourazanis.com. Deploy with `npx wrangler deploy`.
+// Secrets (never in this file): TURNSTILE_SECRET, TO_ADDRESS — see ../README.md.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "abourazanis-contact",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  "routes": [{ "pattern": "contact.abourazanis.com", "custom_domain": true }],
+  "vars": {
+    // Sites allowed to post to the form (comma-separated).
+    "ALLOWED_ORIGINS": "https://abourazanis.com,https://www.abourazanis.com",
+    // Sender on the Email Routing domain; replies go to the visitor (Reply-To).
+    "FROM_ADDRESS": "contact@abourazanis.com"
+  },
+  // Delivers only to verified Email Routing destinations; the address itself is the TO_ADDRESS secret.
+  "send_email": [{ "name": "MAIL" }],
+  "observability": { "enabled": true }
+}

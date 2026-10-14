@@ -1,0 +1,4 @@
+---
+import { site } from '../data/site';
+---
+{site.socials.map((s) => <a href={s.href} rel="me">{s.label}</a>)}

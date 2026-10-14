@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/page.css'; // after Base, so these override base.css
+import '../styles/projects.css';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site';
+import { projects } from '../data/projects';
+
+const year = new Date().getFullYear();
+---
+<Base title={`Projects — ${site.name}`} description={`Side projects by ${site.name}, newest first.`}>
+  <nav class="bar" aria-label="Projects">
+    <a class="bar-item" href="/"><span aria-hidden="true">←</span> Home</a>
+    <a class="bar-item" href="/cv/">CV</a>
+    <a class="bar-item" href="/contact/">Contact</a>
+    <ThemeToggle />
+  </nav>
+
+  <main id="main" class="sheet">
+    <header class="intro fade">
+      <h1>Projects</h1>
+      <p>Things I've built outside my day job, newest first. For work projects, see the <a class="link" href="/cv/">CV</a>.</p>
+    </header>
+
+    <ol class="ledger">
+      {projects.map((p, i) => (
+        <li class="entry fade" id={p.id} style={`--i:${i + 1}`}>
+          <div class="body">
+            <h2>{p.name}</h2>
+            <p class="summary">{p.summary}</p>
+            <p class="tags"><span class="visually-hidden">Built with: </span>{p.stack.join(' · ')}</p>
+          </div>
+          {p.status && <p class="status">{p.status}</p>}
+          {p.links.length > 0 && <ul class="links">
+            {p.links.map((l) => (
+              <li>
+                <a href={l.href} rel="noopener">{l.label}<span class="visually-hidden"> code for {p.name}, on GitHub</span><Icon name="arrow-up-right" /></a>
+              </li>
+            ))}
+          </ul>}
+        </li>
+      ))}
+    </ol>
+  </main>
+
+  <footer class="sheet-foot">
+    <p>© {year} {site.name}</p>
+  </footer>
+</Base>

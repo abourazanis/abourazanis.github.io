@@ -1,0 +1,14 @@
+---
+// Small line icons, inherit the text colour.
+interface Props { name: 'arrow-right' | 'arrow-up-right' | 'contrast' }
+const { name } = Astro.props;
+---
+{name === 'arrow-right' && (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" /></svg>
+)}
+{name === 'arrow-up-right' && (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+)}
+{name === 'contrast' && (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8.5" /><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor" /></svg>
+)}

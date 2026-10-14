@@ -1,0 +1,46 @@
+---
+import '../styles/home.css';
+import Base from '../layouts/Base.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Section from '../components/Section.astro';
+import GitHubActivity from '../components/GitHubActivity.astro';
+import ProjectList from '../components/ProjectList.astro';
+import PageFooter from '../components/PageFooter.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site';
+import { projects } from '../data/projects';
+---
+<Base>
+  <div class="layout">
+    <Sidebar />
+
+    <main id="main" class="content">
+      <Section id="about" num="01" title="About" class="about">
+        <p>I'm a backend engineer based in Athens and Technical Lead at kariera.gr, an HR tech platform for job seekers and the companies hiring them. I'm responsible for the architecture and delivery of its backend services, including search, recommendation systems and features built on LLMs.</p>
+        <p>Before that I spent four years at Plum, a fintech app for saving and investing, where I went from engineer to Engineering Manager for two teams. Earlier I built Django web apps and native iOS and Android apps for an e-learning platform, and led the build of a booking platform for a major Greek telecoms provider. I started in 2010 at a web agency.</p>
+        <p class="offclock"><strong>Off the clock</strong>Airplanes&nbsp;· Scale&nbsp;modelling&nbsp;· Lindy&nbsp;Hop</p>
+        <div class="actions">
+          <a class="btn" href="#contact">Work with me <Icon name="arrow-right" /></a>
+          <a class="link" href="/cv/">Read the CV</a>
+        </div>
+      </Section>
+
+      <GitHubActivity />
+
+      <Section id="projects" num="03" title="Projects" class="projects">
+        <ProjectList projects={projects.slice(0, 3)} />
+        <a class="link" href="/projects/">All projects</a>
+      </Section>
+
+      <Section id="contact" num="04" title="Contact" class="contact">
+        <p class="contact-copy">If you'd like to work together, or just want to say hello, send me a message.</p>
+        <div class="actions">
+          <a class="btn" href="/contact/">Start a conversation <Icon name="arrow-right" /></a>
+          <a class="link" href={site.linkedin}>or message me on LinkedIn</a>
+        </div>
+      </Section>
+
+      <PageFooter />
+    </main>
+  </div>
+</Base>

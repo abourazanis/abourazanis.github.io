@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/page.css'; // after Base, so these override base.css
+import '../styles/contact.css';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site';
+import { contact } from '../data/contact';
+
+const year = new Date().getFullYear();
+---
+<Base title={`Contact — ${site.name}`} description={`Get in touch with ${site.name}.`}>
+  <nav class="bar" aria-label="Contact">
+    <a class="bar-item" href="/"><span aria-hidden="true">←</span> Home</a>
+    <a class="bar-item" href="/cv/">CV</a>
+    <ThemeToggle />
+  </nav>
+
+  <main id="main" class="sheet narrow">
+    <header class="intro fade">
+      <h1>Contact</h1>
+      <p>If you need help with a project, or you're hiring for a team, tell me a bit about it. I'll reply within a few days.</p>
+    </header>
+
+    <form class="form needs-js fade" style="--i:1" action={contact.endpoint} method="post" data-site-key={contact.turnstileSiteKey}>
+      <div class="field-row">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required maxlength="100" />
+      </div>
+      <div class="field-row">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required maxlength="254" spellcheck="false" />
+        <p class="hint">Only used to reply to you.</p>
+      </div>
+      <div class="field-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="7" required minlength="2" maxlength="5000"></textarea>
+      </div>
+
+      <!-- Bot traps: left empty by people, and the time the page was opened -->
+      <div class="trap" aria-hidden="true">
+        <label for="website">Website</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+      <input type="hidden" name="started" />
+
+      <div class="challenge"></div>
+      <p class="status" role="status" aria-live="polite"></p>
+
+      <div class="actions">
+        <button class="btn" type="submit"><span class="label">Send message</span> <Icon name="arrow-right" /></button>
+      </div>
+    </form>
+
+    <div class="sent" hidden tabindex="-1">
+      <h2>Thanks, message sent.</h2>
+      <p>I'll reply to <span class="sent-to"></span> within a few days.</p>
+      <div class="actions"><a class="link" href="/">Back to the homepage</a></div>
+    </div>
+
+    <noscript>
+      <p class="noscript">This form needs JavaScript. You can <a class="link" href={site.linkedin}>message me on LinkedIn</a> instead.</p>
+    </noscript>
+  </main>
+
+  <footer class="sheet-foot">
+    <p>© {year} {site.name}</p>
+  </footer>
+</Base>
+
+<script>
+  import '../scripts/contact';
+</script>

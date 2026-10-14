@@ -1,0 +1,23 @@
+// Identity and links shared by every page. Never add an email address here:
+// contact goes through the form and LinkedIn, to keep it away from spam bots.
+// (The CV page carries an encoded one; see emailCode in cv.ts.)
+export const site = {
+  name: 'Anastasis Bourazanis',
+  role: 'Backend engineer',
+  tagline: 'Technical Lead at kariera.gr', // second headline line, under the role
+  description: 'Anastasis Bourazanis is a backend engineer and Technical Lead in Athens, currently at kariera.gr.',
+  githubUser: 'abourazanis',
+  socials: [
+    { label: 'GitHub', href: 'https://github.com/abourazanis' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/abourazanis' },
+  ],
+  linkedin: 'https://www.linkedin.com/in/abourazanis',
+};
+
+// Side menu: in-page sections first, then separate pages (CV last).
+export const nav = [
+  { label: 'About', href: '#about' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
+  { label: 'CV', href: '/cv/' },
+];

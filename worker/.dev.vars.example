@@ -1,0 +1,5 @@
+# Copy to .dev.vars for `npm run dev`. These are Cloudflare's Turnstile test
+# keys (always pass); use any address for local runs, mail is only simulated.
+TURNSTILE_SECRET=1x0000000000000000000000000000000AA
+TO_ADDRESS=you@example.com
+ALLOWED_ORIGINS=http://localhost:4321
